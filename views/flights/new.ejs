@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>New Flight</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/flights">ALL FLIGHTS</a> |
+        <a href="/flights/new">ADD FLIGHT</a> |
+    </nav>
+    <main>
+        <h1>Create New Flight</h1>
+        <form action="/flights" method="POST">
+            <label>Airline:
+                <select name="airline">
+                    <option value="American">American</option>
+                    <option value="Southwest">Southwest</option>
+                    <option value="United">United</option>
+                </select>
+            </label>
+            <br>
+            <label>Flight No.:
+                <input type="text" name="flightNo">
+            </label>
+            <br>
+            <label>Airport:
+                <select name="airport">
+                    <option value="AUS">AUS</option>
+                    <option value="DAL">DAL</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SEA">SEA</option>
+                </select>
+            </label>
+            <br>
+            <label>Departure:
+                <input type="datetime-local" name="departs">
+            </label>
+            <br>
+            <button type="submit">Create Flight</button>
+        </form>
+    </main>
+</body>
+
+</html>
