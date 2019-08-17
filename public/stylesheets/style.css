@@ -44,19 +44,24 @@ table {
 
 }
 
-table, th, td {
+table, th, td {  
   padding: 10px;
   border: 1px solid #424748;
 
 }
 
 #show-page {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
+  display: flex;
+  flex-flow: column;
 }
 
 #show-page div:nth-child(even) {
   font-weight: bold;
+  font-size: 20px;
+  margin-left: 30px;
+  display: inline;
 }
 
+button a {
+  color: black;
+}
