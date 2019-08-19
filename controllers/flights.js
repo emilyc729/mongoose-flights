@@ -42,9 +42,16 @@ function index(req, res) {
 function show(req, res) {
     Flight.findById(req.params.id, function (err, flight) {
         if (err) return res.render('flights/index');
+        var optionsArr = ['AUS', 'LAX', 'DAL', 'SEA'];
+        optionsArr.splice(optionsArr.indexOf(flight.airport),1);
+        
+       flight.destinations.forEach(function(d) {
+            optionsArr.splice(optionsArr.indexOf(d.airport), 1);
+       });
+    
         Ticket.find({flight: flight._id}, function(err, tickets){
             console.log(tickets);
-            res.render('flights/show',{title: 'Flight Details', flight, tickets});
+            res.render('flights/show',{title: 'Flight Details', flight, tickets, optionsArr});
         });
         console.log(flight);
     

@@ -37,6 +37,10 @@ h1 {
   margin-top: 50px;
 }
 
+h1, h2 {
+  text-decoration: underline;
+}
+
 main {
   padding-top: 60px;
   display: flex;
@@ -60,23 +64,20 @@ label {
 }
 
 #destinations-table, #flights-table {
-  margin-top: 20px;
   border-collapse: collapse;
 
 }
 
-#destinations-table table, #destinations-table th, #destinations-table td {
+#destinations-table th, #destinations-table td {
   padding: 10px;
   border: 1px solid #424748;
 }
-#flights-table table, #flights-table th, #flights-table td {  
+#flights-table th, #flights-table td {  
   padding: 10px;
   border: 1px solid #424748;
-
 }
 
 #tickets-table {
-  margin-top: 20px;
   border-spacing: 0;
 }
 
@@ -88,13 +89,15 @@ label {
   padding: 10px;
 }
 
-
 #show-page {
-  display: flex;
-  flex-flow: column;
+  margin-bottom: 15px;
 }
 
-#show-page div:nth-child(even) {
+#show-page div{
+ padding: 8px;
+}
+
+#show-page span {
   font-weight: bold;
   font-size: 20px;
   margin-left: 30px;
@@ -114,5 +117,42 @@ button {
 
 #create-ticket {
   margin: 10px 0;
+}
+
+
+select {
+  font-size: 14px;
+  width: 100px;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:white;
+  height: 3px;
+}
+
+#destinations-form {
+  margin-bottom: 20px;
+  
+}
+
+#destinations-form div, #tickets-form div, #flights-form div{
+  margin-top: 10px;
+  text-align: center;
+}
+
+#tickets-form label, #flights-form label {
+  display: inline-block;
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+#destinations-form label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 15px;
 }
 

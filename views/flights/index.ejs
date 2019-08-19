@@ -12,11 +12,11 @@
             <% if(new Date(f.departs).setHours(0,0,0,0) < new Date().setHours(0,0,0,0)) { %>
                 <td style="color:red"><%= f.airline %></td>
                 <td style="color:red"><%= f.flightNo %></td>
-                <td style="color:red"><%= f.departs %></td>
+                <td style="color:red"><%= f.departs.toLocaleString('en-US', {timeZoneName: 'short' }) %></td>
             <% } else { %>
                 <td><%= f.airline %></td>
                 <td><%= f.flightNo %></td>
-                <td><%= f.departs %></td>
+                <td><%= f.departs.toLocaleString('en-US', {timeZoneName: 'short' }) %></td>
             <% } %>
             <td><a href="/flights/<%= f._id %>">Details</a></td>
         </tr>
