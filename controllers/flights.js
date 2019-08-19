@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new');
+    res.render('flights/new', {title: 'Create New Flight'});
 }
 
 function create(req, res) {
@@ -28,8 +28,7 @@ function create(req, res) {
 function index(req, res) {
     Flight.find(function (err, flights) {
         if (err) return res.render('flights/index');
-        res.render('flights/index',
-            {flights: flights }
+        res.render('flights/index', {title: 'Flights List', flights: flights }
         );
     }).sort('departs');
     /*
@@ -45,17 +44,15 @@ function show(req, res) {
         if (err) return res.render('flights/index');
         Ticket.find({flight: flight._id}, function(err, tickets){
             console.log(tickets);
-            res.render('flights/show',{title: 'Flight Detail', flight, tickets});
+            res.render('flights/show',{title: 'Flight Details', flight, tickets});
         });
+        console.log(flight);
     
-        /*
-        flight.destinations.find(
-            {_id: {$nin: }}
-        )
-        */
        /*
        res.render('flights/show',{title: 'Flight Detail', flight});
         console.log(flight);
             */
     });
+    
+
 }

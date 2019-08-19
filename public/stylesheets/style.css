@@ -2,17 +2,35 @@ body {
   margin: 0 auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-nav {
+
+#navbar {
   position: fixed;
   top: 0;
   margin: 0 auto;
-  background-color: black;
+  background-color: rgb(26, 25, 25);
   width: 100%;
   padding: 20px;
   box-shadow: 0 0 25px grey;
+  color: rgb(8, 193, 255);
+  font-size: 18px;
+}
+
+#navbar a {
+  text-decoration: none;
   color: white;
+  margin: 0 20px;
+
+}
+
+#navbar a:hover{
+  text-decoration: none;
+  color: rgb(8, 193, 255);
 }
 
 h1 {
@@ -20,7 +38,11 @@ h1 {
 }
 
 main {
-  padding: 30px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 label {
@@ -28,27 +50,44 @@ label {
   display: block;
 }
 
-a {
+#flights-table a{
+  color: black;
   text-decoration: none;
-  color: white;
-  margin: 0 15px;
 }
 
-a:hover{
-  text-decoration: none;
-  color: blue;
+#flights-table a:hover{
+  color: rgb(8, 193, 255);
 }
-table {
+
+#destinations-table, #flights-table {
   margin-top: 20px;
   border-collapse: collapse;
 
 }
 
-table, th, td {  
+#destinations-table table, #destinations-table th, #destinations-table td {
+  padding: 10px;
+  border: 1px solid #424748;
+}
+#flights-table table, #flights-table th, #flights-table td {  
   padding: 10px;
   border: 1px solid #424748;
 
 }
+
+#tickets-table {
+  margin-top: 20px;
+  border-spacing: 0;
+}
+
+#tickets-table th {
+  border-bottom: 2px solid black;
+}
+
+#tickets-table td{
+  padding: 10px;
+}
+
 
 #show-page {
   display: flex;
@@ -64,4 +103,16 @@ table, th, td {
 
 button a {
   color: black;
+  text-decoration: none;
+  margin-top: 20px;
 }
+
+button {
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#create-ticket {
+  margin: 10px 0;
+}
+

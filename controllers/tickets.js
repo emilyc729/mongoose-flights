@@ -3,11 +3,12 @@ var Ticket = require('../models/ticket');
 
 module.exports = {
     new: newTicket,
-    create
+    create, 
+    delete: removeTicket
 };
 
 function newTicket(req, res) {
-    res.render('tickets/new', {flightId: req.params.id});
+    res.render('tickets/new', {title: 'Create New Ticket', flightId: req.params.id});
 }
 
 function create(req, res) {
@@ -21,4 +22,12 @@ function create(req, res) {
     });
     
     
+}
+
+function removeTicket(req, res) {
+    console.log(req.params.id);
+    Ticket.findByIdAndRemove({'_id': req.params.id}, function(err, tix) {
+        //console.log(_id);
+        res.redirect(`/flights/${tix.flight}`);
+    })
 }

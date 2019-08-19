@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//method override
+var methodOverride = require('method-override');
 //import database
 require('./config/database');
 
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//method override
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
